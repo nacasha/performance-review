@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { FC, Suspense } from 'react';
+import { initializeIcons } from '@fluentui/react';
+import { lazily } from 'react-lazily';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+initializeIcons();
 
-export default App;
+const { DashboardIndexPage } = lazily(() => import('./pages/dashboard/dashboard-index-page'));
+const { EmployeesIndexPage } = lazily(() => import('./pages/employees/employees-index-page'));
+const { MainLayout } = lazily(() => import('./ui/layouts/main-layout'));
+
+export const App: FC = () => (
+  <Suspense fallback={<div>Loading</div>}>
+    <Router>
+      <Switch>
+        <Route path="/auth">
+          Auth Page
+        </Route>
+        <Route path="/">
+          <MainLayout>
+            <Suspense fallback={<div>Loading</div>}>
+              <Switch>
+                <Route path="/employees" component={EmployeesIndexPage} exact />
+                <Route path="/" component={DashboardIndexPage} exact />
+              </Switch>
+            </Suspense>
+          </MainLayout>
+        </Route>
+      </Switch>
+    </Router>
+  </Suspense>
+);

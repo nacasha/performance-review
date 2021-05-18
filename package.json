@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fluentui/react": "^8.14.9",
+    "@nacasha/fluentui-kit.ui.details-list": "^0.0.10",
+    "@nacasha/fluentui-kit.ui.navbar": "^0.0.8",
+    "@nacasha/fluentui-kit.ui.sidebar": "^0.0.8",
+    "@nacasha/fluentui-kit.ui.spinner-text": "^0.0.3",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -10,8 +15,14 @@
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "@types/react-router": "^5.1.14",
+    "@types/react-router-dom": "^5.1.7",
+    "node-sass": "5.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-lazily": "^0.9.0",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1"
@@ -39,5 +50,16 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.24.0",
+    "@typescript-eslint/parser": "^4.24.0",
+    "eslint-config-airbnb-typescript": "^12.3.1",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import": "^2.23.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0"
   }
 }
