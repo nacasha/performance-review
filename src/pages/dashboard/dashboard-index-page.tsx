@@ -14,7 +14,7 @@ export const DashboardIndexPage: FC = () => {
 
   return (
     <Stack tokens={{ padding: 18 }}>
-      <Text variant="large">Dashboard</Text>
+      <Text variant="large">Welcome, Izal Fathoni</Text>
     </Stack>
   );
 };

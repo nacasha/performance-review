@@ -4,9 +4,12 @@
   "private": true,
   "dependencies": {
     "@fluentui/react": "^8.14.9",
-    "@nacasha/fluentui-kit.ui.details-list": "^0.0.10",
-    "@nacasha/fluentui-kit.ui.navbar": "^0.0.8",
-    "@nacasha/fluentui-kit.ui.sidebar": "^0.0.8",
+    "@hookform/resolvers": "^2.5.1",
+    "@nacasha/fluentui-kit.ui.card": "^0.0.5",
+    "@nacasha/fluentui-kit.ui.commandbar": "^0.0.5",
+    "@nacasha/fluentui-kit.ui.details-list": "^0.0.16",
+    "@nacasha/fluentui-kit.ui.navbar": "^0.0.9",
+    "@nacasha/fluentui-kit.ui.sidebar": "^0.0.9",
     "@nacasha/fluentui-kit.ui.spinner-text": "^0.0.3",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -20,12 +23,14 @@
     "node-sass": "5.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-hook-form": "^7.6.1",
     "react-lazily": "^0.9.0",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "typescript": "^4.1.2",
-    "web-vitals": "^1.0.1"
+    "web-vitals": "^1.0.1",
+    "yup": "^0.32.9"
   },
   "scripts": {
     "start": "react-scripts start",

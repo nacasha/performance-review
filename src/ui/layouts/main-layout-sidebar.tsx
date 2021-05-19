@@ -25,8 +25,8 @@ export const MainLayoutSidebar: FC = () => {
           icon: 'People',
         },
         {
-          key: '/assignments',
-          url: '/assignments',
+          key: Routes.ASSIGNMENTS_INDEX_PAGE,
+          url: Routes.ASSIGNMENTS_INDEX_PAGE,
           name: 'Assignments',
           icon: 'DocLibrary',
         },

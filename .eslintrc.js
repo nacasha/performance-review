@@ -46,6 +46,7 @@ module.exports = {
     'react/jsx-props-no-spreading': 'off',
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
+    'react/destructuring-assignment': 'off',
     'import/no-duplicates': 'off',
     'import/no-named-as-default': 'off',
     'import/prefer-default-export': 'off',

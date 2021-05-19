@@ -1,17 +1,17 @@
 import { FC } from 'react';
 import { useBreadcrumb } from '@nacasha/fluentui-kit.ui.navbar';
 
-import { EmployeeDetailsList } from 'src/ui/modules/employee/employee-details-list';
+import { AssignmentDetailsList } from 'src/ui/modules/assignment/assignment-details-list';
 import { PageContainer } from 'src/ui/elements/page-container';
 
-export const EmployeesIndexPage: FC = () => {
+export const AssignmentsIndexPage: FC = () => {
   useBreadcrumb([
-    { key: 'employees', text: 'Employees', isCurrentItem: true },
+    { key: 'assignments', text: 'Assignments', isCurrentItem: true },
   ]);
 
   return (
     <PageContainer>
-      <EmployeeDetailsList
+      <AssignmentDetailsList
         items={[]}
         totalItems={0}
       />
