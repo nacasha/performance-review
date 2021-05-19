@@ -5,11 +5,14 @@ import { Stack } from '@fluentui/react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-import { CheckboxFieldController } from 'src/ui/elements/react-hook-form/chekbox-field-controller';
-import { FormProvider } from 'src/ui/elements/react-hook-form/form-provider';
-import { FormSubmitController } from 'src/ui/elements/react-hook-form/form-submit-controller';
-import { ISelectFieldControllerProps, SelectFieldController } from 'src/ui/elements/react-hook-form/select-field-controller';
-import { TextFieldController } from 'src/ui/elements/react-hook-form/text-field-controller';
+import {
+  CheckboxFieldController,
+  FormActionCard,
+  FormProvider,
+  ISelectFieldControllerProps,
+  SelectFieldController,
+  TextFieldController,
+} from '@nacasha/fluentui-kit.lib.react-hook-form';
 
 export type IEmployeeFormValues = {
   fullName: string;
@@ -99,7 +102,7 @@ export const EmployeeForm: FC<IEmployeeFormProps> = ({
           </Stack>
         </Card>
 
-        <FormSubmitController />
+        <FormActionCard />
       </Stack>
     </FormProvider>
   );

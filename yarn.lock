@@ -1571,7 +1571,16 @@
   dependencies:
     core-js "^3.0.0"
 
-"@nacasha/fluentui-kit.ui.card@^0.0.5":
+"@nacasha/fluentui-kit.lib.react-hook-form@^0.0.1":
+  version "0.0.1"
+  resolved "https://node.bit.dev/@nacasha/fluentui-kit.lib.react-hook-form/-/@nacasha-fluentui-kit.lib.react-hook-form-0.0.1.tgz#0b85f43b46f28aef49b36899177a23ea3bd7ce91"
+  integrity sha1-C4X0O0byiu9Js2iZF3oj6jvXzpE=
+  dependencies:
+    "@fluentui/react" "8.10.0"
+    "@nacasha/fluentui-kit.ui.card" "0.0.5"
+    core-js "^3.0.0"
+
+"@nacasha/fluentui-kit.ui.card@0.0.5", "@nacasha/fluentui-kit.ui.card@^0.0.5":
   version "0.0.5"
   resolved "https://node.bit.dev/@nacasha/fluentui-kit.ui.card/-/@nacasha-fluentui-kit.ui.card-0.0.5.tgz#01170b6a07df4335e2594f14891ca89677d48455"
   integrity sha1-ARcLagffQzXiWU8UiRyolnfUhFU=

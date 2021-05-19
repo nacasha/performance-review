@@ -1,13 +1,10 @@
 import { Card } from '@nacasha/fluentui-kit.ui.card';
 import { FC } from 'react';
+import { FormActionCard, FormProvider, TextFieldController } from '@nacasha/fluentui-kit.lib.react-hook-form';
 import { object, string, SchemaOf } from 'yup';
 import { Stack } from '@fluentui/react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-
-import { FormProvider } from 'src/ui/elements/react-hook-form/form-provider';
-import { FormSubmitController } from 'src/ui/elements/react-hook-form/form-submit-controller';
-import { TextFieldController } from 'src/ui/elements/react-hook-form/text-field-controller';
 
 export type IReviewFormValues = {
   question: string;
@@ -54,7 +51,7 @@ export const ReviewForm: FC<IReviewFormProps> = ({
           </Stack>
         </Card>
 
-        <FormSubmitController />
+        <FormActionCard />
       </Stack>
     </FormProvider>
   );

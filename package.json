@@ -5,6 +5,7 @@
   "dependencies": {
     "@fluentui/react": "^8.14.9",
     "@hookform/resolvers": "^2.5.1",
+    "@nacasha/fluentui-kit.lib.react-hook-form": "^0.0.1",
     "@nacasha/fluentui-kit.ui.card": "^0.0.5",
     "@nacasha/fluentui-kit.ui.commandbar": "^0.0.5",
     "@nacasha/fluentui-kit.ui.details-list": "^0.0.16",
