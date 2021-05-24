@@ -1,10 +1,7 @@
 import { FC, useCallback } from 'react';
-import { Helmet } from 'react-helmet-async';
-import { Text } from '@fluentui/react';
-import { useBreadcrumb } from '@nacasha/fluentui-kit.ui.navbar';
 
-import { PageContainer } from 'src/ui/elements/page-container';
 import { AssignmentForm, IAssignmentFormProps } from 'src/ui/modules/assignment/assignment-form';
+import { FormPageTemplate } from 'src/ui/templates/form-page-template';
 
 export const AssignmentsAddPage: FC = () => {
   const handleSubmit = useCallback<IAssignmentFormProps['onSubmit']>(
@@ -14,22 +11,12 @@ export const AssignmentsAddPage: FC = () => {
     [],
   );
 
-  useBreadcrumb([
-    { key: 'assignments', text: 'Assignments' },
-    { key: 'add', text: 'Add', isCurrentItem: true },
-  ]);
-
   return (
-    <PageContainer centered>
-      <Helmet>
-        <title>Add Assignment</title>
-      </Helmet>
-
-      <Text variant="xxLarge" style={{ marginBottom: 15 }}>
-        Add Assignment
-      </Text>
-
+    <FormPageTemplate
+      title="Add Assignment"
+      breadcrumb={['Assignments', 'Add']}
+    >
       <AssignmentForm onSubmit={handleSubmit} />
-    </PageContainer>
+    </FormPageTemplate>
   );
 };

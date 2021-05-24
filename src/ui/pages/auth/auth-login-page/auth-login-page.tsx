@@ -1,6 +1,6 @@
 import { FC, useCallback } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useHistory } from 'react-router';
+import { RouteComponentProps } from 'react-router';
 import { useMutation } from 'react-query';
 import axios from 'axios';
 import toast from 'react-hot-toast';
@@ -13,8 +13,7 @@ import { useAuthStore } from 'src/store/auth-store';
 import * as Classes from './auth-login-page.classes';
 import './auth-login-page.scss';
 
-export const AuthLoginPage: FC = () => {
-  const history = useHistory();
+export const AuthLoginPage: FC<RouteComponentProps> = ({ history }) => {
   const mutation = useMutation(authApi.login);
   const saveLogin = useAuthStore((state) => state.saveLogin);
 
