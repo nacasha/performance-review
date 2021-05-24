@@ -12,10 +12,6 @@ export const fetch = (params: IEmployeeFetchRequest) => (
   axiosApiClient.get<IEmployeeFetchResponse>('employees', { params })
 );
 
-export const get = (id: any) => (
-  axiosApiClient.get<IEmployee>(`employees/${id}`)
-);
-
 export const add = (data: IEmployeeAddRequest) => (
   axiosApiClient.post<IEmployeeAddResponse>('employees', data)
 );

@@ -17,20 +17,19 @@ export const QuestionDetailsList: FC<IQuestionDetailsListProps> = (props) => {
   const columns = useMemo<IDetailsListProps['columns']>(
     () => [
       {
-        key: 'id',
-        fieldName: 'id',
-        name: 'ID',
-        minWidth: 130,
+        key: 'description',
+        fieldName: 'description',
+        name: 'Description',
+        minWidth: 290,
         isResizable: true,
         filterType: 'text',
       },
       {
-        key: 'description',
-        fieldName: 'description',
-        name: 'Description',
-        minWidth: 250,
+        key: 'createdAt',
+        fieldName: 'createdAt',
+        name: 'Created At',
+        minWidth: 170,
         isResizable: true,
-        filterType: 'text',
       },
     ],
     [],

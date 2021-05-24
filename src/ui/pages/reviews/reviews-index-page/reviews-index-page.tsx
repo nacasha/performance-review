@@ -1,25 +1,21 @@
 import { FC } from 'react';
-import { Helmet } from 'react-helmet-async';
-import { useBreadcrumb } from '@nacasha/fluentui-kit.ui.navbar';
 
+import { IndexPageTemplate } from 'src/ui/templates/index-page-template';
+import { QueryKeys } from 'src/constants';
+import { reviewApi } from 'src/services/api';
 import { ReviewDetailsList } from 'src/ui/modules/review/review-details-list';
-import { PageContainer } from 'src/ui/elements/page-container';
+import { useDetailsListQuery } from 'src/hooks/query-hooks';
 
 export const ReviewsIndexPage: FC = () => {
-  useBreadcrumb([
-    { key: 'reviews', text: 'Reviews', isCurrentItem: true },
-  ]);
+  const { data, isFetching } = useDetailsListQuery(QueryKeys.FETCH_REVIEW, reviewApi.fetch);
 
   return (
-    <PageContainer>
-      <Helmet>
-        <title>Review</title>
-      </Helmet>
-
+    <IndexPageTemplate title="Questions">
       <ReviewDetailsList
-        items={[]}
-        totalItems={0}
+        items={data?.data?.data ?? []}
+        totalItems={data?.data?.meta?.total ?? 0}
+        loading={isFetching}
       />
-    </PageContainer>
+    </IndexPageTemplate>
   );
 };

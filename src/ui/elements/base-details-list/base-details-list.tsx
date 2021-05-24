@@ -18,9 +18,9 @@ export const BaseDetailsList: FC<IDetailsListProps> = (props) => {
 
   return (
     <DetailsList
-      columnFiltering
-      onStateChange={handleStateChange}
       initialState={params}
+      onStateChange={handleStateChange}
+      columnFiltering
       {...props}
     />
   );

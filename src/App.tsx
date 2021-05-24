@@ -21,7 +21,6 @@ const { AuthLoginPage } = lazily(() => import('./ui/pages/auth/auth-login-page')
 const { DashboardIndexPage } = lazily(() => import('./ui/pages/dashboard/dashboard-index-page'));
 const { EmployeesAddPage } = lazily(() => import('./ui/pages/employees/employees-add-page'));
 const { EmployeesIndexPage } = lazily(() => import('./ui/pages/employees/employees-index-page'));
-const { EmployeesDetailPage } = lazily(() => import('./ui/pages/employees/employees-detail-page'));
 const { QuestionsAddPage } = lazily(() => import('./ui/pages/questions/questions-add-page'));
 const { QuestionsIndexPage } = lazily(() => import('./ui/pages/questions/questions-index-page'));
 const { ReviewsAddPage } = lazily(() => import('./ui/pages/reviews/reviews-add-page'));
@@ -67,11 +66,6 @@ export const App: FC = () => (
                       <Route
                         path={Routes.EMPLOYEES_ADD_PAGE}
                         component={EmployeesAddPage}
-                        exact
-                      />
-                      <Route
-                        path={Routes.EMPLOYEES_DETAIL_PAGE(':id')}
-                        component={EmployeesDetailPage}
                         exact
                       />
 

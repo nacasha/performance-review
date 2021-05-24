@@ -1,25 +1,21 @@
 import { FC } from 'react';
-import { Helmet } from 'react-helmet-async';
-import { useBreadcrumb } from '@nacasha/fluentui-kit.ui.navbar';
 
+import { IndexPageTemplate } from 'src/ui/templates/index-page-template';
+import { QueryKeys } from 'src/constants';
+import { questionApi } from 'src/services/api';
 import { QuestionDetailsList } from 'src/ui/modules/question/question-details-list';
-import { PageContainer } from 'src/ui/elements/page-container';
+import { useDetailsListQuery } from 'src/hooks/query-hooks';
 
 export const QuestionsIndexPage: FC = () => {
-  useBreadcrumb([
-    { key: 'questions', text: 'Questions', isCurrentItem: true },
-  ]);
+  const { data, isFetching } = useDetailsListQuery(QueryKeys.FETCH_QUESTION, questionApi.fetch);
 
   return (
-    <PageContainer>
-      <Helmet>
-        <title>Question</title>
-      </Helmet>
-
+    <IndexPageTemplate title="Questions">
       <QuestionDetailsList
-        items={[]}
-        totalItems={0}
+        items={data?.data?.data ?? []}
+        totalItems={data?.data?.meta?.total ?? 0}
+        loading={isFetching}
       />
-    </PageContainer>
+    </IndexPageTemplate>
   );
 };

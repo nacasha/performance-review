@@ -4,6 +4,7 @@ import { useHistory } from 'react-router';
 
 import { BaseDetailsList } from 'src/ui/elements/base-details-list';
 import { Routes } from 'src/constants';
+import { IAssignment } from 'src/typings';
 
 export type IAssignmentsDetailsListProps = Omit<IDetailsListProps, 'uniqueKey' | 'columns'>;
 
@@ -17,20 +18,12 @@ export const AssignmentDetailsList: FC<IAssignmentsDetailsListProps> = (props) =
   const columns = useMemo<IDetailsListProps['columns']>(
     () => [
       {
-        key: 'id',
-        fieldName: 'id',
-        name: 'ID',
-        minWidth: 130,
-        isResizable: true,
-        filterType: 'text',
-      },
-      {
         key: 'reviewer',
         fieldName: 'reviewer',
         name: 'Reviewer',
         minWidth: 200,
         isResizable: true,
-        filterType: 'text',
+        onRender: (item: IAssignment) => item.reviewer.fullName,
       },
       {
         key: 'reviewee',
@@ -38,7 +31,14 @@ export const AssignmentDetailsList: FC<IAssignmentsDetailsListProps> = (props) =
         name: 'Reviewee',
         minWidth: 200,
         isResizable: true,
-        filterType: 'text',
+        onRender: (item: IAssignment) => item.reviewee.fullName,
+      },
+      {
+        key: 'createdAt',
+        fieldName: 'createdAt',
+        name: 'Created At',
+        minWidth: 170,
+        isResizable: true,
       },
     ],
     [],
@@ -62,6 +62,7 @@ export const AssignmentDetailsList: FC<IAssignmentsDetailsListProps> = (props) =
       uniqueKey="assignment-details-list"
       columns={columns}
       commandbarLeftItems={commandbarLeftItems}
+      columnFiltering={false}
     />
   );
 };

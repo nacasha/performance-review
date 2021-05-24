@@ -1,25 +1,21 @@
 import { FC } from 'react';
-import { Helmet } from 'react-helmet-async';
-import { useBreadcrumb } from '@nacasha/fluentui-kit.ui.navbar';
 
+import { assignmentApi } from 'src/services/api';
 import { AssignmentDetailsList } from 'src/ui/modules/assignment/assignment-details-list';
-import { PageContainer } from 'src/ui/elements/page-container';
+import { IndexPageTemplate } from 'src/ui/templates/index-page-template';
+import { QueryKeys } from 'src/constants';
+import { useDetailsListQuery } from 'src/hooks/query-hooks';
 
 export const AssignmentsIndexPage: FC = () => {
-  useBreadcrumb([
-    { key: 'assignments', text: 'Assignments', isCurrentItem: true },
-  ]);
+  const { data, isFetching } = useDetailsListQuery(QueryKeys.FETCH_ASSIGNMENT, assignmentApi.fetch);
 
   return (
-    <PageContainer>
-      <Helmet>
-        <title>Assignment</title>
-      </Helmet>
-
+    <IndexPageTemplate title="Assignments">
       <AssignmentDetailsList
-        items={[]}
-        totalItems={0}
+        items={data?.data?.data ?? []}
+        totalItems={data?.data?.meta?.total ?? 0}
+        loading={isFetching}
       />
-    </PageContainer>
+    </IndexPageTemplate>
   );
 };
