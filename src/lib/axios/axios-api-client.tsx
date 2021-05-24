@@ -27,6 +27,10 @@ axiosApiClient.interceptors.request.use((
       config.headers.Authorization = `Bearer ${authStore.getState().token}`;
     }
 
+    if (config.data && config.method === 'post') {
+      config.data = snakecaseKeys(config.data, { deep: true });
+    }
+
     return config;
   }
 ));
