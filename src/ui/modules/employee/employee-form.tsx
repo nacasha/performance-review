@@ -25,7 +25,7 @@ export type IEmployeeFormValues = {
 };
 
 export type IEmployeeFormProps = {
-  onSubmit: (values: IEmployeeFormValues) => Promise<void>;
+  onSubmit: (values: IEmployeeFormValues) => Promise<any>;
   defaultValues?: Partial<IEmployeeFormValues>;
 };
 

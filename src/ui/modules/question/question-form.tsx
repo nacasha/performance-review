@@ -11,7 +11,7 @@ export type IQuestionFormValues = {
 };
 
 export type IQuestionFormProps = {
-  onSubmit: (values: IQuestionFormValues) => Promise<void>;
+  onSubmit: (values: IQuestionFormValues) => Promise<any>;
   defaultValues?: Partial<IQuestionFormValues>;
 };
 

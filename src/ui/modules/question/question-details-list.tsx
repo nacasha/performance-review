@@ -3,7 +3,7 @@ import { IDetailsListProps } from '@nacasha/fluentui-kit.ui.details-list';
 import { useHistory } from 'react-router';
 
 import { BaseDetailsList } from 'src/ui/elements/base-details-list';
-import { Routes } from 'src/lib/constants';
+import { Routes } from 'src/constants';
 
 export type IQuestionDetailsListProps = Omit<IDetailsListProps, 'uniqueKey' | 'columns'>;
 

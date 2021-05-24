@@ -12,7 +12,7 @@ export type IAssignmentFormValues = {
 };
 
 export type IAssignmentFormProps = {
-  onSubmit: (values: IAssignmentFormValues) => Promise<void>;
+  onSubmit: (values: IAssignmentFormValues) => Promise<any>;
   defaultValues?: Partial<IAssignmentFormValues>;
 };
 

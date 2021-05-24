@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap');
+
+body {
+  background-color: #f8f9fa;
+}
+
+.auth-login-container {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.auth-login-content {
+  width: 100%;
+  max-width: 320px;
+  padding: 20px;
+}
+
+.auth-login-logo {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  justify-content: center;
+  margin-bottom: 20px;
+  width: 100%;
+  margin-top: -20px;
+}
+
+.auth-login-image {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.auth-login-text {
+  font-family: 'Titillium Web';
+  margin-top: 5px;
+  font-size: 19px;
+}
+
+.auth-login-form {
+  width: 100%;
+}

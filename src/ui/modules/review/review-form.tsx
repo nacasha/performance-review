@@ -12,7 +12,7 @@ export type IReviewFormValues = {
 };
 
 export type IReviewFormProps = {
-  onSubmit: (values: IReviewFormValues) => Promise<void>;
+  onSubmit: (values: IReviewFormValues) => Promise<any>;
   defaultValues?: Partial<IReviewFormValues>;
 };
 

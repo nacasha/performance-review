@@ -3,7 +3,7 @@ import { IDetailsListProps } from '@nacasha/fluentui-kit.ui.details-list';
 import { useHistory } from 'react-router';
 
 import { BaseDetailsList } from 'src/ui/elements/base-details-list';
-import { Routes } from 'src/lib/constants';
+import { Routes } from 'src/constants';
 
 export type IEmployeeDetailsListProps = Omit<IDetailsListProps, 'uniqueKey' | 'columns'>;
 
@@ -16,14 +16,6 @@ export const EmployeeDetailsList: FC<IEmployeeDetailsListProps> = (props) => {
 
   const columns = useMemo<IDetailsListProps['columns']>(
     () => [
-      {
-        key: 'id',
-        fieldName: 'id',
-        name: 'ID',
-        minWidth: 130,
-        isResizable: true,
-        filterType: 'text',
-      },
       {
         key: 'fullName',
         fieldName: 'fullName',
@@ -46,7 +38,6 @@ export const EmployeeDetailsList: FC<IEmployeeDetailsListProps> = (props) => {
         name: 'Gender',
         minWidth: 100,
         isResizable: true,
-        filterType: 'text',
       },
       {
         key: 'department',
@@ -62,7 +53,6 @@ export const EmployeeDetailsList: FC<IEmployeeDetailsListProps> = (props) => {
         name: 'Phone Number',
         minWidth: 200,
         isResizable: true,
-        filterType: 'text',
       },
       {
         key: 'address',
@@ -70,7 +60,6 @@ export const EmployeeDetailsList: FC<IEmployeeDetailsListProps> = (props) => {
         name: 'Address',
         minWidth: 250,
         isResizable: true,
-        filterType: 'text',
       },
       {
         key: 'isAdmin',
@@ -78,7 +67,6 @@ export const EmployeeDetailsList: FC<IEmployeeDetailsListProps> = (props) => {
         name: 'Admin',
         minWidth: 250,
         isResizable: true,
-        filterType: 'text',
       },
     ],
     [],
