@@ -1,7 +1,19 @@
+export type IAssignmentUser = {
+  id: number;
+  fullName: string;
+  department: string;
+};
+
 export type IAssignment = {
   id: number;
   reviewerId: number;
   revieweeId: number;
+  creatorId: number;
+  reviewer: IAssignmentUser;
+  reviewee: IAssignmentUser;
+  creator: IAssignmentUser;
+  createdAt: string;
+  updatedAt: string;
 };
 
 export type IEmployee = {
@@ -21,6 +33,7 @@ export type IQuestion = {
   description: string;
   createdAt: string;
   updatedAt: string;
+  deletedAt: string | null;
 };
 
 export type IReview = {
