@@ -20,7 +20,7 @@ export type IEmployeeFormValues = {
   phoneNumber: string;
   address: string;
   department: string;
-  gender: 0 | 1;
+  gender: 'male' | 'female';
   isAdmin: boolean;
 };
 
@@ -35,15 +35,15 @@ const defaultValues: Partial<IEmployeeFormValues> = {
   phoneNumber: '',
   address: '',
   department: '',
-  gender: 0,
+  gender: 'male',
   isAdmin: false,
 };
 
 const schema: SchemaOf<Partial<IEmployeeFormValues>> = object().shape({
   fullName: string().required('Full Name is Required'),
-  gender: mixed().required('Gender is required').oneOf([0, 1]),
+  gender: mixed().required('Gender is required').oneOf(['male', 'female']),
   phoneNumber: string().required('Phone Number is required'),
-  email: string().required('Address is required'),
+  email: string().email('Invalid email address').required('Email is required'),
   address: string().required('Address is required'),
   department: string().required('Department is required'),
   isAdmin: bool(),
@@ -60,8 +60,8 @@ export const EmployeeForm: FC<IEmployeeFormProps> = ({
 
   const genderSelectOptions = useMemo<ISelectFieldControllerProps['componentProps']['options']>(
     () => [
-      { key: 0, text: 'Male' },
-      { key: 1, text: 'Female' },
+      { key: 'male', text: 'Male' },
+      { key: 'female', text: 'Female' },
     ],
     [],
   );
